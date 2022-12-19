@@ -82,9 +82,9 @@ class _LoginPageState extends State<LoginPage> {
                               if (!Form.of(context)!.validate()) {
                                 return;
                               }
-                              final Login action =
+                              final Login loginUserAction =
                                   Login(email: _email.text, password: _password.text, response: _onResponse);
-                              StoreProvider.of<AppState>(context).dispatch(action);
+                              StoreProvider.of<AppState>(context).dispatch(loginUserAction);
                             },
                             child: const Text('Login'),
                           ),
@@ -97,12 +97,9 @@ class _LoginPageState extends State<LoginPage> {
                               if (!Form.of(context)!.validate()) {
                                 return;
                               }
-                              final CreateUser action = CreateUser(
-                                email: _email.text,
-                                password: _password.text,
-                                response: _onResponse,
-                              );
-                              StoreProvider.of<AppState>(context).dispatch(action);
+                              final CreateUser createUserAction =
+                                  CreateUser(email: _email.text, password: _password.text, response: _onResponse);
+                              StoreProvider.of<AppState>(context).dispatch(createUserAction);
                             },
                             child: const Text('Register'),
                           ),

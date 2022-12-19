@@ -11,12 +11,12 @@ Reducer<AppState> reducer = combineReducers(<Reducer<AppState>>[
     }
     return state;
   },
-  _reducer,
+  _loginReducer,
   TypedReducer<AppState, LogoutSuccessful>(_logoutSuccessful),
   TypedReducer<AppState, LogoutSuccessful>(_updatePasswordSuccessful),
 ]);
 
-AppState _reducer(AppState state, dynamic action) {
+AppState _loginReducer(AppState state, dynamic action) {
   return state.copyWith(
     auth: authReducer(state.auth, action),
   );

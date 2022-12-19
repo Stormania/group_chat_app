@@ -12,8 +12,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final TextEditingController _email = TextEditingController();
-  final TextEditingController _password = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   void _onResponse(dynamic action) {
     if (action is CreateUserError) {
@@ -45,12 +45,12 @@ class _LoginPageState extends State<LoginPage> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 TextFormField(
-                  controller: _email,
+                  controller: _emailController,
                   decoration: const InputDecoration(
                     labelText: 'E-mail address',
                   ),
-                  validator: (String? value) {
-                    if (value == null || !value.contains('@')) {
+                  validator: (String? email) {
+                    if (email == null || !email.contains('@')) {
                       return 'Please enter a valid email address.';
                     }
                     return null;
@@ -58,13 +58,13 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 const SizedBox(height: 16),
                 TextFormField(
-                  controller: _password,
+                  controller: _passwordController,
                   obscureText: true,
                   decoration: const InputDecoration(
                     labelText: 'Password',
                   ),
-                  validator: (String? value) {
-                    if (value == null || value.length < 6) {
+                  validator: (String? password) {
+                    if (password == null || password.length < 6) {
                       return 'Please enter a password with at least 6 characters.';
                     }
                     return null;
@@ -82,8 +82,11 @@ class _LoginPageState extends State<LoginPage> {
                               if (!Form.of(context)!.validate()) {
                                 return;
                               }
-                              final Login loginUserAction =
-                                  Login(email: _email.text, password: _password.text, response: _onResponse);
+                              final Login loginUserAction = Login(
+                                email: _emailController.text,
+                                password: _passwordController.text,
+                                response: _onResponse,
+                              );
                               StoreProvider.of<AppState>(context).dispatch(loginUserAction);
                             },
                             child: const Text('Login'),
@@ -97,8 +100,11 @@ class _LoginPageState extends State<LoginPage> {
                               if (!Form.of(context)!.validate()) {
                                 return;
                               }
-                              final CreateUser createUserAction =
-                                  CreateUser(email: _email.text, password: _password.text, response: _onResponse);
+                              final CreateUser createUserAction = CreateUser(
+                                email: _emailController.text,
+                                password: _passwordController.text,
+                                response: _onResponse,
+                              );
                               StoreProvider.of<AppState>(context).dispatch(createUserAction);
                             },
                             child: const Text('Register'),

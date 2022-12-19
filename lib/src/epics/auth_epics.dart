@@ -13,10 +13,10 @@ class AuthEpics {
     return combineEpics(<Epic<AppState>>[
       TypedEpic<AppState, CreateUserStart>(_createUserStart),
       TypedEpic<AppState, LoginStart>(_loginStart),
+      TypedEpic<AppState, LogoutStart>(_logoutStart),
       TypedEpic<AppState, UpdateUsernameStart>(_updateUsernameStart),
       TypedEpic<AppState, UpdatePhotoStart>(_updatePhotoStart),
       TypedEpic<AppState, UpdatePasswordStart>(_updatePasswordStart),
-      TypedEpic<AppState, LogoutStart>(_logoutStart),
     ]);
   }
 
@@ -37,6 +37,15 @@ class AuthEpics {
           .map((AppUser user) => Login.successful(user))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => Login.error(error, stackTrace))
           .doOnData(action.response);
+    });
+  }
+
+  Stream<dynamic> _logoutStart(Stream<LogoutStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((LogoutStart action) {
+      return Stream<void>.value(null) //
+          .asyncMap((_) => api.logout())
+          .map((_) => const Logout.successful())
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => Logout.error(error, stackTrace));
     });
   }
 
@@ -64,15 +73,6 @@ class AuthEpics {
           .asyncMap((_) => api.updatePassword(password: action.password))
           .map((_) => const UpdatePassword.successful())
           .onErrorReturnWith((Object error, StackTrace stackTrace) => UpdatePassword.error(error, stackTrace));
-    });
-  }
-
-  Stream<dynamic> _logoutStart(Stream<LogoutStart> actions, EpicStore<AppState> store) {
-    return actions.flatMap((LogoutStart action) {
-      return Stream<void>.value(null) //
-          .asyncMap((_) => api.logout())
-          .map((_) => const Logout.successful())
-          .onErrorReturnWith((Object error, StackTrace stackTrace) => Logout.error(error, stackTrace));
     });
   }
 }

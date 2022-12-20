@@ -6,6 +6,13 @@ class AuthApi {
 
   final FirebaseAuth auth;
 
+  Future<AppUser?> getUser() async {
+    final User? user = auth.currentUser;
+    if (user == null) {
+      return null;
+    }
+  }
+
   Future<AppUser> createUser({required String email, required String password}) async {
     final UserCredential credentials = await auth.createUserWithEmailAndPassword(email: email, password: password);
     final User user = credentials.user!;

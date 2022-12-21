@@ -19,8 +19,7 @@ class LocationApi {
     }
 
     final LocationData result = await location.getLocation();
-    final UserLocation userLocation = UserLocation(lat: result.latitude ?? 0.0, lng: result.longitude ?? 0.0, uid: uid);
-    await firestore.collection('locations').doc(uid).set(userLocation.toJson());
-    return userLocation;
+
+    return UserLocation(lat: result.latitude ?? 0.0, lng: result.longitude ?? 0.0, uid: uid);
   }
 }

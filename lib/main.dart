@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:group_chat_app/firebase_options.dart';
+import 'package:group_chat_app/src/actions/index.dart';
 import 'package:group_chat_app/src/data/auth_api.dart';
 import 'package:group_chat_app/src/epics/app_epics.dart';
 import 'package:group_chat_app/src/models/index.dart';
@@ -26,7 +27,7 @@ Future<void> main() async {
     middleware: <Middleware<AppState>>[
       EpicMiddleware<AppState>(epics.epic),
     ],
-  );
+  )..dispatch(const InitializeUser());
 
   runApp(GroupChatApp(store: store));
 }

@@ -11,6 +11,7 @@ class AuthApi {
     if (user == null) {
       return null;
     }
+    return _convertUser(user);
   }
 
   Future<AppUser> createUser({required String email, required String password}) async {
@@ -20,23 +21,14 @@ class AuthApi {
 
     await user.updateDisplayName(displayName);
 
-    return AppUser(
-      uid: user.uid,
-      email: email,
-      displayName: displayName,
-    );
+    return _convertUser(user);
   }
 
   Future<AppUser> login({required String email, required String password}) async {
     final UserCredential credentials = await auth.signInWithEmailAndPassword(email: email, password: password);
     final User user = credentials.user!;
 
-    return AppUser(
-      uid: user.uid,
-      email: email,
-      displayName: user.displayName!,
-      imageUrl: user.photoURL,
-    );
+    return _convertUser(user);
   }
 
   Future<AppUser> updateName({required String name}) async {
@@ -45,12 +37,7 @@ class AuthApi {
 
     await user.updateDisplayName(displayName);
 
-    return AppUser(
-      uid: user.uid,
-      email: user.email!,
-      displayName: displayName,
-      imageUrl: user.photoURL,
-    );
+    return _convertUser(user);
   }
 
   Future<AppUser> updatePhoto({required String url}) async {
@@ -58,12 +45,7 @@ class AuthApi {
 
     await user.updatePhotoURL(url);
 
-    return AppUser(
-      uid: user.uid,
-      email: user.email!,
-      displayName: user.displayName!,
-      imageUrl: url,
-    );
+    return _convertUser(user);
   }
 
   Future<void> updatePassword({required String password}) async {
@@ -74,5 +56,14 @@ class AuthApi {
 
   Future<void> logout() async {
     await auth.signOut();
+  }
+
+  AppUser _convertUser(User user) {
+    return AppUser(
+      uid: user.uid,
+      email: user.email!,
+      displayName: user.displayName!,
+      imageUrl: user.photoURL,
+    );
   }
 }

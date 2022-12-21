@@ -11,7 +11,6 @@ class AuthEpics {
 
   Epic<AppState> get epic {
     return combineEpics(<Epic<AppState>>[
-      TypedEpic<AppState, InitializeUser>(_initializeUser),
       TypedEpic<AppState, CreateUserStart>(_createUserStart),
       TypedEpic<AppState, LoginStart>(_loginStart),
       TypedEpic<AppState, LogoutStart>(_logoutStart),

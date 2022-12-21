@@ -15,12 +15,14 @@ class LocationEpics {
     ]);
   }
 
-  Stream<dynamic> _getLocationStart(Stream<GetLocationStart> actions, EpicStore<AppState> store) {
+  Stream<dynamic> _getLocationStart(
+      Stream<GetLocationStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((GetLocationStart action) {
       return Stream<void>.value(null) //
-          .asyncMap((_) => _api._getLocation())
+          .asyncMap((_) => _api.getLocation())
           .map((UserLocation? location) => GetLocation.successful(location))
-          .onErrorReturnWith((Object error, StackTrace stackTrace) => GetLocation.error(error, stackTrace));
+          .onErrorReturnWith((Object error, StackTrace stackTrace) =>
+              GetLocation.error(error, stackTrace));
     });
   }
 }

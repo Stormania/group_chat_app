@@ -42,7 +42,8 @@ Future<void> main() async {
   )..dispatch(const InitializeUser());
 
   await controller.stream
-      .where((dynamic action) => action is InitializeUserSuccessful || action is InitializeUserError)
+      .where((dynamic action) =>
+          action is InitializeUserSuccessful || action is InitializeUserError)
       .first;
 
   WidgetsBinding.instance.allowFirstFrame();

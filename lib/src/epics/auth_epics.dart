@@ -5,9 +5,9 @@ import 'package:redux_epics/redux_epics.dart';
 import 'package:rxdart/transformers.dart';
 
 class AuthEpics {
-  const AuthEpics({required this.api});
+  const AuthEpics(this._api);
 
-  final AuthApi api;
+  final AuthApi _api;
 
   Epic<AppState> get epic {
     return combineEpics(<Epic<AppState>>[
@@ -24,7 +24,7 @@ class AuthEpics {
   Stream<dynamic> _createUserStart(Stream<CreateUserStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((CreateUserStart action) {
       return Stream<void>.value(null) //
-          .asyncMap((_) => api.createUser(email: action.email, password: action.password))
+          .asyncMap((_) => _api.createUser(email: action.email, password: action.password))
           .map((AppUser user) => CreateUser.successful(user))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => CreateUser.error(error, stackTrace))
           .doOnData(action.response);
@@ -34,7 +34,7 @@ class AuthEpics {
   Stream<dynamic> _loginStart(Stream<LoginStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((LoginStart action) {
       return Stream<void>.value(null) //
-          .asyncMap((_) => api.login(email: action.email, password: action.password))
+          .asyncMap((_) => _api.login(email: action.email, password: action.password))
           .map((AppUser user) => Login.successful(user))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => Login.error(error, stackTrace))
           .doOnData(action.response);
@@ -44,7 +44,7 @@ class AuthEpics {
   Stream<dynamic> _logoutStart(Stream<LogoutStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((LogoutStart action) {
       return Stream<void>.value(null) //
-          .asyncMap((_) => api.logout())
+          .asyncMap((_) => _api.logout())
           .map((_) => const Logout.successful())
           .onErrorReturnWith((Object error, StackTrace stackTrace) => Logout.error(error, stackTrace));
     });
@@ -53,7 +53,7 @@ class AuthEpics {
   Stream<void> _initializeUserStart(Stream<InitializeUserStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((InitializeUser action) {
       return Stream<void>.value(null) //
-          .asyncMap((_) => api.getUser())
+          .asyncMap((_) => _api.getUser())
           .map((AppUser? user) => InitializeUser.successful(user))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => InitializeUser.error(error, stackTrace));
     });
@@ -62,7 +62,7 @@ class AuthEpics {
   Stream<dynamic> _updateUsernameStart(Stream<UpdateUsernameStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((UpdateUsernameStart action) {
       return Stream<void>.value(null) //
-          .asyncMap((_) => api.updateName(name: action.name))
+          .asyncMap((_) => _api.updateName(name: action.name))
           .map((AppUser user) => UpdateUsername.successful(user))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => UpdateUsername.error(error, stackTrace));
     });
@@ -71,7 +71,7 @@ class AuthEpics {
   Stream<dynamic> _updatePhotoStart(Stream<UpdatePhotoStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((UpdatePhotoStart action) {
       return Stream<void>.value(null) //
-          .asyncMap((_) => api.updatePhoto(url: action.url))
+          .asyncMap((_) => _api.updatePhoto(url: action.url))
           .map((AppUser user) => UpdatePhoto.successful(user))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => UpdatePhoto.error(error, stackTrace));
     });
@@ -80,7 +80,7 @@ class AuthEpics {
   Stream<dynamic> _updatePasswordStart(Stream<UpdatePasswordStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((UpdatePasswordStart action) {
       return Stream<void>.value(null) //
-          .asyncMap((_) => api.updatePassword(password: action.password))
+          .asyncMap((_) => _api.updatePassword(password: action.password))
           .map((_) => const UpdatePassword.successful())
           .onErrorReturnWith((Object error, StackTrace stackTrace) => UpdatePassword.error(error, stackTrace));
     });

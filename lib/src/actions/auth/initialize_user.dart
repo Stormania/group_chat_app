@@ -6,5 +6,5 @@ class InitializeUser with _$InitializeUser {
 
   const factory InitializeUser.successful(AppUser? user) = InitializeUserSuccessful;
 
-  const factory InitializeUser.error(Object error, StackTrace stackTrace) = _InitializeUserError;
+  const factory InitializeUser.error(Object error, StackTrace stackTrace) = InitializeUserError;
 }

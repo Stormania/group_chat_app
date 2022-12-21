@@ -42,21 +42,21 @@ mixin _$InitializeUser {
   TResult map<TResult extends Object?>(
     TResult Function(InitializeUserStart value) $default, {
     required TResult Function(InitializeUserSuccessful value) successful,
-    required TResult Function(_InitializeUserError value) error,
+    required TResult Function(InitializeUserError value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(InitializeUserStart value)? $default, {
     TResult? Function(InitializeUserSuccessful value)? successful,
-    TResult? Function(_InitializeUserError value)? error,
+    TResult? Function(InitializeUserError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(InitializeUserStart value)? $default, {
     TResult Function(InitializeUserSuccessful value)? successful,
-    TResult Function(_InitializeUserError value)? error,
+    TResult Function(InitializeUserError value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -154,7 +154,7 @@ class _$InitializeUserStart implements InitializeUserStart {
   TResult map<TResult extends Object?>(
     TResult Function(InitializeUserStart value) $default, {
     required TResult Function(InitializeUserSuccessful value) successful,
-    required TResult Function(_InitializeUserError value) error,
+    required TResult Function(InitializeUserError value) error,
   }) {
     return $default(this);
   }
@@ -164,7 +164,7 @@ class _$InitializeUserStart implements InitializeUserStart {
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(InitializeUserStart value)? $default, {
     TResult? Function(InitializeUserSuccessful value)? successful,
-    TResult? Function(_InitializeUserError value)? error,
+    TResult? Function(InitializeUserError value)? error,
   }) {
     return $default?.call(this);
   }
@@ -174,7 +174,7 @@ class _$InitializeUserStart implements InitializeUserStart {
   TResult maybeMap<TResult extends Object?>(
     TResult Function(InitializeUserStart value)? $default, {
     TResult Function(InitializeUserSuccessful value)? successful,
-    TResult Function(_InitializeUserError value)? error,
+    TResult Function(InitializeUserError value)? error,
     required TResult orElse(),
   }) {
     if ($default != null) {
@@ -304,7 +304,7 @@ class _$InitializeUserSuccessful implements InitializeUserSuccessful {
   TResult map<TResult extends Object?>(
     TResult Function(InitializeUserStart value) $default, {
     required TResult Function(InitializeUserSuccessful value) successful,
-    required TResult Function(_InitializeUserError value) error,
+    required TResult Function(InitializeUserError value) error,
   }) {
     return successful(this);
   }
@@ -314,7 +314,7 @@ class _$InitializeUserSuccessful implements InitializeUserSuccessful {
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(InitializeUserStart value)? $default, {
     TResult? Function(InitializeUserSuccessful value)? successful,
-    TResult? Function(_InitializeUserError value)? error,
+    TResult? Function(InitializeUserError value)? error,
   }) {
     return successful?.call(this);
   }
@@ -324,7 +324,7 @@ class _$InitializeUserSuccessful implements InitializeUserSuccessful {
   TResult maybeMap<TResult extends Object?>(
     TResult Function(InitializeUserStart value)? $default, {
     TResult Function(InitializeUserSuccessful value)? successful,
-    TResult Function(_InitializeUserError value)? error,
+    TResult Function(InitializeUserError value)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -345,20 +345,20 @@ abstract class InitializeUserSuccessful implements InitializeUser {
 }
 
 /// @nodoc
-abstract class _$$_InitializeUserErrorCopyWith<$Res> {
-  factory _$$_InitializeUserErrorCopyWith(_$_InitializeUserError value,
-          $Res Function(_$_InitializeUserError) then) =
-      __$$_InitializeUserErrorCopyWithImpl<$Res>;
+abstract class _$$InitializeUserErrorCopyWith<$Res> {
+  factory _$$InitializeUserErrorCopyWith(_$InitializeUserError value,
+          $Res Function(_$InitializeUserError) then) =
+      __$$InitializeUserErrorCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$_InitializeUserErrorCopyWithImpl<$Res>
-    extends _$InitializeUserCopyWithImpl<$Res, _$_InitializeUserError>
-    implements _$$_InitializeUserErrorCopyWith<$Res> {
-  __$$_InitializeUserErrorCopyWithImpl(_$_InitializeUserError _value,
-      $Res Function(_$_InitializeUserError) _then)
+class __$$InitializeUserErrorCopyWithImpl<$Res>
+    extends _$InitializeUserCopyWithImpl<$Res, _$InitializeUserError>
+    implements _$$InitializeUserErrorCopyWith<$Res> {
+  __$$InitializeUserErrorCopyWithImpl(
+      _$InitializeUserError _value, $Res Function(_$InitializeUserError) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -367,7 +367,7 @@ class __$$_InitializeUserErrorCopyWithImpl<$Res>
     Object? error = null,
     Object? stackTrace = null,
   }) {
-    return _then(_$_InitializeUserError(
+    return _then(_$InitializeUserError(
       null == error ? _value.error : error,
       null == stackTrace
           ? _value.stackTrace
@@ -379,8 +379,8 @@ class __$$_InitializeUserErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_InitializeUserError implements _InitializeUserError {
-  const _$_InitializeUserError(this.error, this.stackTrace);
+class _$InitializeUserError implements InitializeUserError {
+  const _$InitializeUserError(this.error, this.stackTrace);
 
   @override
   final Object error;
@@ -396,7 +396,7 @@ class _$_InitializeUserError implements _InitializeUserError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_InitializeUserError &&
+            other is _$InitializeUserError &&
             const DeepCollectionEquality().equals(other.error, error) &&
             (identical(other.stackTrace, stackTrace) ||
                 other.stackTrace == stackTrace));
@@ -409,8 +409,8 @@ class _$_InitializeUserError implements _InitializeUserError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_InitializeUserErrorCopyWith<_$_InitializeUserError> get copyWith =>
-      __$$_InitializeUserErrorCopyWithImpl<_$_InitializeUserError>(
+  _$$InitializeUserErrorCopyWith<_$InitializeUserError> get copyWith =>
+      __$$InitializeUserErrorCopyWithImpl<_$InitializeUserError>(
           this, _$identity);
 
   @override
@@ -452,7 +452,7 @@ class _$_InitializeUserError implements _InitializeUserError {
   TResult map<TResult extends Object?>(
     TResult Function(InitializeUserStart value) $default, {
     required TResult Function(InitializeUserSuccessful value) successful,
-    required TResult Function(_InitializeUserError value) error,
+    required TResult Function(InitializeUserError value) error,
   }) {
     return error(this);
   }
@@ -462,7 +462,7 @@ class _$_InitializeUserError implements _InitializeUserError {
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(InitializeUserStart value)? $default, {
     TResult? Function(InitializeUserSuccessful value)? successful,
-    TResult? Function(_InitializeUserError value)? error,
+    TResult? Function(InitializeUserError value)? error,
   }) {
     return error?.call(this);
   }
@@ -472,7 +472,7 @@ class _$_InitializeUserError implements _InitializeUserError {
   TResult maybeMap<TResult extends Object?>(
     TResult Function(InitializeUserStart value)? $default, {
     TResult Function(InitializeUserSuccessful value)? successful,
-    TResult Function(_InitializeUserError value)? error,
+    TResult Function(InitializeUserError value)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -482,14 +482,14 @@ class _$_InitializeUserError implements _InitializeUserError {
   }
 }
 
-abstract class _InitializeUserError implements InitializeUser {
-  const factory _InitializeUserError(
-      final Object error, final StackTrace stackTrace) = _$_InitializeUserError;
+abstract class InitializeUserError implements InitializeUser {
+  const factory InitializeUserError(
+      final Object error, final StackTrace stackTrace) = _$InitializeUserError;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$_InitializeUserErrorCopyWith<_$_InitializeUserError> get copyWith =>
+  _$$InitializeUserErrorCopyWith<_$InitializeUserError> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

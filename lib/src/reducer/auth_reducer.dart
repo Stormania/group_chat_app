@@ -11,31 +11,21 @@ Reducer<AuthState> authReducer = combineReducers(<Reducer<AuthState>>[
 ]);
 
 AuthState _createUserSuccessful(AuthState state, CreateUserSuccessful action) {
-  return state.copyWith(
-    user: action.user,
-  );
+  return state.copyWith(user: action.user);
 }
 
 AuthState _loginSuccessful(AuthState state, LoginSuccessful action) {
-  return state.copyWith(
-    user: action.user,
-  );
+  return state.copyWith(user: action.user);
 }
 
 AuthState _initializeUserSuccessful(AuthState state, InitializeUserSuccessful action) {
-  return state.copyWith(
-    user: action.user,
-  );
+  return state.copyWith(user: action.user);
 }
 
 AuthState _updateUsernameSuccessful(AuthState state, UpdateUsernameSuccessful action) {
-  return state.copyWith(
-    user: action.user,
-  );
+  return state.copyWith(user: action.user);
 }
 
 AuthState _updatePhotoSuccessful(AuthState state, UpdatePhotoSuccessful action) {
-  return state.copyWith(
-    user: action.user,
-  );
+  return state.copyWith(user: action.user);
 }

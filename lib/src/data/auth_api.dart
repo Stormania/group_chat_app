@@ -11,6 +11,8 @@ class AuthApi {
     if (user == null) {
       return null;
     }
+    //await Future<void>.delayed(const Duration(seconds: 5));
+
     return _convertUser(user);
   }
 

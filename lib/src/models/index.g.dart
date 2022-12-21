@@ -49,14 +49,16 @@ Map<String, dynamic> _$$AppUser$ToJson(_$AppUser$ instance) =>
 
 _$UserLocation$ _$$UserLocation$FromJson(Map<String, dynamic> json) =>
     _$UserLocation$(
+      uid: json['uid'] as String,
       lat: (json['lat'] as num).toDouble(),
-      long: (json['long'] as num).toDouble(),
+      lng: (json['lng'] as num).toDouble(),
     );
 
 Map<String, dynamic> _$$UserLocation$ToJson(_$UserLocation$ instance) =>
     <String, dynamic>{
+      'uid': instance.uid,
       'lat': instance.lat,
-      'long': instance.long,
+      'lng': instance.lng,
     };
 
 _$LocationState$ _$$LocationState$FromJson(Map<String, dynamic> json) =>
@@ -64,9 +66,14 @@ _$LocationState$ _$$LocationState$FromJson(Map<String, dynamic> json) =>
       location: json['location'] == null
           ? null
           : UserLocation.fromJson(json['location'] as Map<String, dynamic>),
+      locations: (json['locations'] as List<dynamic>?)
+              ?.map((e) => UserLocation.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <UserLocation>[],
     );
 
 Map<String, dynamic> _$$LocationState$ToJson(_$LocationState$ instance) =>
     <String, dynamic>{
       'location': instance.location,
+      'locations': instance.locations,
     };

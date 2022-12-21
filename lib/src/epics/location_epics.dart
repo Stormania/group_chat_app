@@ -11,18 +11,16 @@ class LocationEpics {
 
   Epic<AppState> get epic {
     return combineEpics(<Epic<AppState>>[
-      TypedEpic<AppState, GetLocationStart>(_getLocationStart),
+      TypedEpic<AppState, GetLocation>(_getLocationStart),
     ]);
   }
 
-  Stream<dynamic> _getLocationStart(
-      Stream<GetLocationStart> actions, EpicStore<AppState> store) {
-    return actions.flatMap((GetLocationStart action) {
+  Stream<dynamic> _getLocationStart(Stream<GetLocation> actions, EpicStore<AppState> store) {
+    return actions.flatMap((GetLocation action) {
       return Stream<void>.value(null) //
-          .asyncMap((_) => _api.getLocation())
+          .asyncMap((_) => _api.getLocation(store.state.auth.user!.uid))
           .map((UserLocation? location) => GetLocation.successful(location))
-          .onErrorReturnWith((Object error, StackTrace stackTrace) =>
-              GetLocation.error(error, stackTrace));
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => GetLocation.error(error, stackTrace));
     });
   }
 }

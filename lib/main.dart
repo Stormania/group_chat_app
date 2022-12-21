@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ Future<void> main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   final AuthApi authApi = AuthApi(auth: FirebaseAuth.instance);
-  final LocationApi locationApi = LocationApi(location: Location());
+  final LocationApi locationApi = LocationApi(location: Location(), firestore: FirebaseFirestore.instance);
   final AppEpics epics = AppEpics(authApi: authApi, locationApi: locationApi);
 
   final StreamController<dynamic> controller = StreamController<dynamic>();
@@ -42,8 +43,7 @@ Future<void> main() async {
   )..dispatch(const InitializeUser());
 
   await controller.stream
-      .where((dynamic action) =>
-          action is InitializeUserSuccessful || action is InitializeUserError)
+      .where((dynamic action) => action is InitializeUserSuccessful || action is InitializeUserError)
       .first;
 
   WidgetsBinding.instance.allowFirstFrame();

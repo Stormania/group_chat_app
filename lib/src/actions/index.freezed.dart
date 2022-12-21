@@ -2000,6 +2000,484 @@ abstract class CreateUserError implements CreateUser {
 }
 
 /// @nodoc
+mixin _$GetLocation {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function() $default, {
+    required TResult Function(UserLocation? location) successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function()? $default, {
+    TResult? Function(UserLocation? location)? successful,
+    TResult? Function(Object error, StackTrace stackTrace)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function()? $default, {
+    TResult Function(UserLocation? location)? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(GetLocationStart value) $default, {
+    required TResult Function(GetLocationSuccessful value) successful,
+    required TResult Function(GetLocationError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(GetLocationStart value)? $default, {
+    TResult? Function(GetLocationSuccessful value)? successful,
+    TResult? Function(GetLocationError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(GetLocationStart value)? $default, {
+    TResult Function(GetLocationSuccessful value)? successful,
+    TResult Function(GetLocationError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GetLocationCopyWith<$Res> {
+  factory $GetLocationCopyWith(
+          GetLocation value, $Res Function(GetLocation) then) =
+      _$GetLocationCopyWithImpl<$Res, GetLocation>;
+}
+
+/// @nodoc
+class _$GetLocationCopyWithImpl<$Res, $Val extends GetLocation>
+    implements $GetLocationCopyWith<$Res> {
+  _$GetLocationCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$GetLocationStartCopyWith<$Res> {
+  factory _$$GetLocationStartCopyWith(
+          _$GetLocationStart value, $Res Function(_$GetLocationStart) then) =
+      __$$GetLocationStartCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetLocationStartCopyWithImpl<$Res>
+    extends _$GetLocationCopyWithImpl<$Res, _$GetLocationStart>
+    implements _$$GetLocationStartCopyWith<$Res> {
+  __$$GetLocationStartCopyWithImpl(
+      _$GetLocationStart _value, $Res Function(_$GetLocationStart) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetLocationStart implements GetLocationStart {
+  const _$GetLocationStart();
+
+  @override
+  String toString() {
+    return 'GetLocation()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetLocationStart);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function() $default, {
+    required TResult Function(UserLocation? location) successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) {
+    return $default();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function()? $default, {
+    TResult? Function(UserLocation? location)? successful,
+    TResult? Function(Object error, StackTrace stackTrace)? error,
+  }) {
+    return $default?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function()? $default, {
+    TResult Function(UserLocation? location)? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(GetLocationStart value) $default, {
+    required TResult Function(GetLocationSuccessful value) successful,
+    required TResult Function(GetLocationError value) error,
+  }) {
+    return $default(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(GetLocationStart value)? $default, {
+    TResult? Function(GetLocationSuccessful value)? successful,
+    TResult? Function(GetLocationError value)? error,
+  }) {
+    return $default?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(GetLocationStart value)? $default, {
+    TResult Function(GetLocationSuccessful value)? successful,
+    TResult Function(GetLocationError value)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetLocationStart implements GetLocation {
+  const factory GetLocationStart() = _$GetLocationStart;
+}
+
+/// @nodoc
+abstract class _$$GetLocationSuccessfulCopyWith<$Res> {
+  factory _$$GetLocationSuccessfulCopyWith(_$GetLocationSuccessful value,
+          $Res Function(_$GetLocationSuccessful) then) =
+      __$$GetLocationSuccessfulCopyWithImpl<$Res>;
+  @useResult
+  $Res call({UserLocation? location});
+
+  $UserLocationCopyWith<$Res>? get location;
+}
+
+/// @nodoc
+class __$$GetLocationSuccessfulCopyWithImpl<$Res>
+    extends _$GetLocationCopyWithImpl<$Res, _$GetLocationSuccessful>
+    implements _$$GetLocationSuccessfulCopyWith<$Res> {
+  __$$GetLocationSuccessfulCopyWithImpl(_$GetLocationSuccessful _value,
+      $Res Function(_$GetLocationSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? location = freezed,
+  }) {
+    return _then(_$GetLocationSuccessful(
+      freezed == location
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as UserLocation?,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserLocationCopyWith<$Res>? get location {
+    if (_value.location == null) {
+      return null;
+    }
+
+    return $UserLocationCopyWith<$Res>(_value.location!, (value) {
+      return _then(_value.copyWith(location: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$GetLocationSuccessful implements GetLocationSuccessful {
+  const _$GetLocationSuccessful(this.location);
+
+  @override
+  final UserLocation? location;
+
+  @override
+  String toString() {
+    return 'GetLocation.successful(location: $location)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetLocationSuccessful &&
+            (identical(other.location, location) ||
+                other.location == location));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, location);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetLocationSuccessfulCopyWith<_$GetLocationSuccessful> get copyWith =>
+      __$$GetLocationSuccessfulCopyWithImpl<_$GetLocationSuccessful>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function() $default, {
+    required TResult Function(UserLocation? location) successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) {
+    return successful(location);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function()? $default, {
+    TResult? Function(UserLocation? location)? successful,
+    TResult? Function(Object error, StackTrace stackTrace)? error,
+  }) {
+    return successful?.call(location);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function()? $default, {
+    TResult Function(UserLocation? location)? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(location);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(GetLocationStart value) $default, {
+    required TResult Function(GetLocationSuccessful value) successful,
+    required TResult Function(GetLocationError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(GetLocationStart value)? $default, {
+    TResult? Function(GetLocationSuccessful value)? successful,
+    TResult? Function(GetLocationError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(GetLocationStart value)? $default, {
+    TResult Function(GetLocationSuccessful value)? successful,
+    TResult Function(GetLocationError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetLocationSuccessful implements GetLocation {
+  const factory GetLocationSuccessful(final UserLocation? location) =
+      _$GetLocationSuccessful;
+
+  UserLocation? get location;
+  @JsonKey(ignore: true)
+  _$$GetLocationSuccessfulCopyWith<_$GetLocationSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetLocationErrorCopyWith<$Res> {
+  factory _$$GetLocationErrorCopyWith(
+          _$GetLocationError value, $Res Function(_$GetLocationError) then) =
+      __$$GetLocationErrorCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Object error, StackTrace stackTrace});
+}
+
+/// @nodoc
+class __$$GetLocationErrorCopyWithImpl<$Res>
+    extends _$GetLocationCopyWithImpl<$Res, _$GetLocationError>
+    implements _$$GetLocationErrorCopyWith<$Res> {
+  __$$GetLocationErrorCopyWithImpl(
+      _$GetLocationError _value, $Res Function(_$GetLocationError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+  }) {
+    return _then(_$GetLocationError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetLocationError implements GetLocationError {
+  const _$GetLocationError(this.error, this.stackTrace);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+
+  @override
+  String toString() {
+    return 'GetLocation.error(error: $error, stackTrace: $stackTrace)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetLocationError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetLocationErrorCopyWith<_$GetLocationError> get copyWith =>
+      __$$GetLocationErrorCopyWithImpl<_$GetLocationError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function() $default, {
+    required TResult Function(UserLocation? location) successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) {
+    return error(this.error, stackTrace);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function()? $default, {
+    TResult? Function(UserLocation? location)? successful,
+    TResult? Function(Object error, StackTrace stackTrace)? error,
+  }) {
+    return error?.call(this.error, stackTrace);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function()? $default, {
+    TResult Function(UserLocation? location)? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(GetLocationStart value) $default, {
+    required TResult Function(GetLocationSuccessful value) successful,
+    required TResult Function(GetLocationError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(GetLocationStart value)? $default, {
+    TResult? Function(GetLocationSuccessful value)? successful,
+    TResult? Function(GetLocationError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(GetLocationStart value)? $default, {
+    TResult Function(GetLocationSuccessful value)? successful,
+    TResult Function(GetLocationError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetLocationError implements GetLocation {
+  const factory GetLocationError(
+      final Object error, final StackTrace stackTrace) = _$GetLocationError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @JsonKey(ignore: true)
+  _$$GetLocationErrorCopyWith<_$GetLocationError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$UpdatePassword {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(

@@ -539,8 +539,9 @@ UserLocation _$UserLocationFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserLocation {
+  String get uid => throw _privateConstructorUsedError;
   double get lat => throw _privateConstructorUsedError;
-  double get long => throw _privateConstructorUsedError;
+  double get lng => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -554,7 +555,7 @@ abstract class $UserLocationCopyWith<$Res> {
           UserLocation value, $Res Function(UserLocation) then) =
       _$UserLocationCopyWithImpl<$Res, UserLocation>;
   @useResult
-  $Res call({double lat, double long});
+  $Res call({String uid, double lat, double lng});
 }
 
 /// @nodoc
@@ -570,17 +571,22 @@ class _$UserLocationCopyWithImpl<$Res, $Val extends UserLocation>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? uid = null,
     Object? lat = null,
-    Object? long = null,
+    Object? lng = null,
   }) {
     return _then(_value.copyWith(
+      uid: null == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
       lat: null == lat
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
               as double,
-      long: null == long
-          ? _value.long
-          : long // ignore: cast_nullable_to_non_nullable
+      lng: null == lng
+          ? _value.lng
+          : lng // ignore: cast_nullable_to_non_nullable
               as double,
     ) as $Val);
   }
@@ -594,7 +600,7 @@ abstract class _$$UserLocation$CopyWith<$Res>
       __$$UserLocation$CopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({double lat, double long});
+  $Res call({String uid, double lat, double lng});
 }
 
 /// @nodoc
@@ -608,17 +614,22 @@ class __$$UserLocation$CopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? uid = null,
     Object? lat = null,
-    Object? long = null,
+    Object? lng = null,
   }) {
     return _then(_$UserLocation$(
+      uid: null == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
       lat: null == lat
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
               as double,
-      long: null == long
-          ? _value.long
-          : long // ignore: cast_nullable_to_non_nullable
+      lng: null == lng
+          ? _value.lng
+          : lng // ignore: cast_nullable_to_non_nullable
               as double,
     ));
   }
@@ -627,19 +638,22 @@ class __$$UserLocation$CopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$UserLocation$ implements UserLocation$ {
-  const _$UserLocation$({required this.lat, required this.long});
+  const _$UserLocation$(
+      {required this.uid, required this.lat, required this.lng});
 
   factory _$UserLocation$.fromJson(Map<String, dynamic> json) =>
       _$$UserLocation$FromJson(json);
 
   @override
+  final String uid;
+  @override
   final double lat;
   @override
-  final double long;
+  final double lng;
 
   @override
   String toString() {
-    return 'UserLocation(lat: $lat, long: $long)';
+    return 'UserLocation(uid: $uid, lat: $lat, lng: $lng)';
   }
 
   @override
@@ -647,13 +661,14 @@ class _$UserLocation$ implements UserLocation$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserLocation$ &&
+            (identical(other.uid, uid) || other.uid == uid) &&
             (identical(other.lat, lat) || other.lat == lat) &&
-            (identical(other.long, long) || other.long == long));
+            (identical(other.lng, lng) || other.lng == lng));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, lat, long);
+  int get hashCode => Object.hash(runtimeType, uid, lat, lng);
 
   @JsonKey(ignore: true)
   @override
@@ -671,16 +686,19 @@ class _$UserLocation$ implements UserLocation$ {
 
 abstract class UserLocation$ implements UserLocation {
   const factory UserLocation$(
-      {required final double lat,
-      required final double long}) = _$UserLocation$;
+      {required final String uid,
+      required final double lat,
+      required final double lng}) = _$UserLocation$;
 
   factory UserLocation$.fromJson(Map<String, dynamic> json) =
       _$UserLocation$.fromJson;
 
   @override
+  String get uid;
+  @override
   double get lat;
   @override
-  double get long;
+  double get lng;
   @override
   @JsonKey(ignore: true)
   _$$UserLocation$CopyWith<_$UserLocation$> get copyWith =>
@@ -694,6 +712,7 @@ LocationState _$LocationStateFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$LocationState {
   UserLocation? get location => throw _privateConstructorUsedError;
+  List<UserLocation> get locations => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -707,7 +726,7 @@ abstract class $LocationStateCopyWith<$Res> {
           LocationState value, $Res Function(LocationState) then) =
       _$LocationStateCopyWithImpl<$Res, LocationState>;
   @useResult
-  $Res call({UserLocation? location});
+  $Res call({UserLocation? location, List<UserLocation> locations});
 
   $UserLocationCopyWith<$Res>? get location;
 }
@@ -726,12 +745,17 @@ class _$LocationStateCopyWithImpl<$Res, $Val extends LocationState>
   @override
   $Res call({
     Object? location = freezed,
+    Object? locations = null,
   }) {
     return _then(_value.copyWith(
       location: freezed == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
               as UserLocation?,
+      locations: null == locations
+          ? _value.locations
+          : locations // ignore: cast_nullable_to_non_nullable
+              as List<UserLocation>,
     ) as $Val);
   }
 
@@ -756,7 +780,7 @@ abstract class _$$LocationState$CopyWith<$Res>
       __$$LocationState$CopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({UserLocation? location});
+  $Res call({UserLocation? location, List<UserLocation> locations});
 
   @override
   $UserLocationCopyWith<$Res>? get location;
@@ -774,12 +798,17 @@ class __$$LocationState$CopyWithImpl<$Res>
   @override
   $Res call({
     Object? location = freezed,
+    Object? locations = null,
   }) {
     return _then(_$LocationState$(
       location: freezed == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
               as UserLocation?,
+      locations: null == locations
+          ? _value._locations
+          : locations // ignore: cast_nullable_to_non_nullable
+              as List<UserLocation>,
     ));
   }
 }
@@ -787,17 +816,28 @@ class __$$LocationState$CopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$LocationState$ implements LocationState$ {
-  const _$LocationState$({this.location});
+  const _$LocationState$(
+      {this.location,
+      final List<UserLocation> locations = const <UserLocation>[]})
+      : _locations = locations;
 
   factory _$LocationState$.fromJson(Map<String, dynamic> json) =>
       _$$LocationState$FromJson(json);
 
   @override
   final UserLocation? location;
+  final List<UserLocation> _locations;
+  @override
+  @JsonKey()
+  List<UserLocation> get locations {
+    if (_locations is EqualUnmodifiableListView) return _locations;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_locations);
+  }
 
   @override
   String toString() {
-    return 'LocationState(location: $location)';
+    return 'LocationState(location: $location, locations: $locations)';
   }
 
   @override
@@ -806,12 +846,15 @@ class _$LocationState$ implements LocationState$ {
         (other.runtimeType == runtimeType &&
             other is _$LocationState$ &&
             (identical(other.location, location) ||
-                other.location == location));
+                other.location == location) &&
+            const DeepCollectionEquality()
+                .equals(other._locations, _locations));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, location);
+  int get hashCode => Object.hash(
+      runtimeType, location, const DeepCollectionEquality().hash(_locations));
 
   @JsonKey(ignore: true)
   @override
@@ -828,14 +871,17 @@ class _$LocationState$ implements LocationState$ {
 }
 
 abstract class LocationState$ implements LocationState {
-  const factory LocationState$({final UserLocation? location}) =
-      _$LocationState$;
+  const factory LocationState$(
+      {final UserLocation? location,
+      final List<UserLocation> locations}) = _$LocationState$;
 
   factory LocationState$.fromJson(Map<String, dynamic> json) =
       _$LocationState$.fromJson;
 
   @override
   UserLocation? get location;
+  @override
+  List<UserLocation> get locations;
   @override
   @JsonKey(ignore: true)
   _$$LocationState$CopyWith<_$LocationState$> get copyWith =>

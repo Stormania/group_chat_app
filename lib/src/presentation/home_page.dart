@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
           builder: (BuildContext context, AppUser? user) {
             return Scaffold(
               appBar: AppBar(
-                title: Text('${user!.displayName} Profile'),
+                title: Text("${user!.displayName}'s Profile"),
                 actions: <Widget>[
                   IconButton(
                     onPressed: () {

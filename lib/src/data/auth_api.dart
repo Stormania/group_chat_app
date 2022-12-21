@@ -64,7 +64,7 @@ class AuthApi {
     return AppUser(
       uid: user.uid,
       email: user.email!,
-      displayName: user.displayName!,
+      displayName: user.displayName ?? user.email!.split('@').first,
       imageUrl: user.photoURL,
     );
   }

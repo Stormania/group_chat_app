@@ -11,12 +11,12 @@ class LocationEpics {
 
   Epic<AppState> get epic {
     return combineEpics(<Epic<AppState>>[
-      TypedEpic<AppState, GetLocation>(_getLocationStart),
+      TypedEpic<AppState, GetLocationStart>(_getLocationStart),
     ]);
   }
 
-  Stream<dynamic> _getLocationStart(Stream<GetLocation> actions, EpicStore<AppState> store) {
-    return actions.flatMap((GetLocation action) {
+  Stream<dynamic> _getLocationStart(Stream<GetLocationStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((GetLocationStart action) {
       return Stream<void>.value(null) //
           .asyncMap((_) => _api.getLocation(store.state.auth.user!.uid))
           .map((UserLocation? location) => GetLocation.successful(location))

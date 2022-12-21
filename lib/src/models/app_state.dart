@@ -8,4 +8,6 @@ class AppState with _$AppState {
   }) = AppState$;
 
   factory AppState.fromJson(Map<dynamic, dynamic> json) => _$AppStateFromJson(Map<String, dynamic>.from(json));
+
+  void dispatch(GetLocation getLocation) {}
 }

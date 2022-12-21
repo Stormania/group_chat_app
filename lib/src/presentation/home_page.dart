@@ -5,8 +5,19 @@ import 'package:group_chat_app/src/models/index.dart';
 import 'package:group_chat_app/src/presentation/containers/user_container.dart';
 import 'package:group_chat_app/src/presentation/containers/user_location_container.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    super.initState();
+    StoreProvider.of<AppState>(context, listen: false).dispatch(const GetLocation());
+  }
 
   @override
   Widget build(BuildContext context) {

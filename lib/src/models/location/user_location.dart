@@ -8,5 +8,5 @@ class UserLocation with _$UserLocation {
     required double lng,
   }) = UserLocation$;
 
-  factory UserLocation.fromJson(Map<String, dynamic> json) => _$UserLocationFromJson(Map<String, dynamic>.from(json));
+  factory UserLocation.fromJson(Map<dynamic, dynamic> json) => _$UserLocationFromJson(Map<String, dynamic>.from(json));
 }

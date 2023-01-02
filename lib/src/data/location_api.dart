@@ -8,18 +8,41 @@ class LocationApi {
   final Location location;
   final FirebaseFirestore firestore;
 
-  Future<UserLocation?> getLocation(String uid) async {
+  Stream<void> getLocation(String uid) async* {
     PermissionStatus permission = await location.hasPermission();
     if (permission == PermissionStatus.denied || permission == PermissionStatus.deniedForever) {
       permission = await location.requestPermission();
 
       if (permission == PermissionStatus.denied || permission == PermissionStatus.deniedForever) {
-        return null;
+        yield* const Stream<void>.empty();
+        return;
       }
     }
 
-    final LocationData result = await location.getLocation();
+    yield* location //
+        .onLocationChanged
+        .map((LocationData result) {
+      return UserLocation(
+        uid: uid,
+        lat: result.latitude ?? 0.0,
+        lng: result.longitude ?? 0.0,
+      );
+    }).asyncMap((UserLocation userLocation) {
+      return firestore //
+          .collection('locations')
+          .doc(uid)
+          .set(userLocation.toJson());
+    });
+  }
 
-    return UserLocation(lat: result.latitude ?? 0.0, lng: result.longitude ?? 0.0, uid: uid);
+  Stream<List<UserLocation>> listenForLocations() {
+    return firestore //
+        .collection('locations')
+        .snapshots()
+        .map((QuerySnapshot<Map<String, dynamic>> snapshot) {
+      return snapshot.docs
+          .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => UserLocation.fromJson(doc.data()))
+          .toList();
+    });
   }
 }

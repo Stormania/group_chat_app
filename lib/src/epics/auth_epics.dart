@@ -50,6 +50,16 @@ class AuthEpics {
     });
   }
 
+  Stream<dynamic> listenForUsersStart(Stream<dynamic> actions, EpicStore<AppState> store) {
+    return actions.whereType<ListenForUsersStart>().flatMap((ListenForUsersStart action) {
+      return Stream<void>.value(null) //
+          .flatMap((_) => _api.getUsers())
+          .map((List<AppUser> users) => ListenForUsers.event(users))
+          .takeUntil(actions.whereType<ListenForUsersDone>())
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => ListenForUsers.error(error, stackTrace));
+    });
+  }
+
   Stream<void> _initializeUserStart(Stream<InitializeUserStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((InitializeUser action) {
       return Stream<void>.value(null) //

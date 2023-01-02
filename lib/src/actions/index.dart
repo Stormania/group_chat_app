@@ -9,6 +9,8 @@ part 'auth/login.dart';
 part 'auth/logout.dart';
 part 'auth/create_user.dart';
 part 'location/get_location.dart';
+part 'location/listen_for_location.dart';
+part 'auth/listen_for_users.dart';
 part 'update_password.dart';
 part 'update_photo.dart';
 part 'update_username.dart';

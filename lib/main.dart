@@ -23,9 +23,9 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   WidgetsBinding.instance.deferFirstFrame();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-
-  final AuthApi authApi = AuthApi(auth: FirebaseAuth.instance);
-  final LocationApi locationApi = LocationApi(location: Location(), firestore: FirebaseFirestore.instance);
+  final FirebaseFirestore firestore = FirebaseFirestore.instance;
+  final AuthApi authApi = AuthApi(auth: FirebaseAuth.instance, firestore: firestore);
+  final LocationApi locationApi = LocationApi(location: Location(), firestore: firestore);
   final AppEpics epics = AppEpics(authApi: authApi, locationApi: locationApi);
 
   final StreamController<dynamic> controller = StreamController<dynamic>();

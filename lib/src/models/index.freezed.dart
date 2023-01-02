@@ -25,12 +25,14 @@ mixin _$AppState {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AppStateCopyWith<AppState> get copyWith => throw _privateConstructorUsedError;
+  $AppStateCopyWith<AppState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AppStateCopyWith<$Res> {
-  factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) = _$AppStateCopyWithImpl<$Res, AppState>;
+  factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
+      _$AppStateCopyWithImpl<$Res, AppState>;
   @useResult
   $Res call({AuthState auth, LocationState location});
 
@@ -39,7 +41,8 @@ abstract class $AppStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCopyWith<$Res> {
+class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
+    implements $AppStateCopyWith<$Res> {
   _$AppStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -84,7 +87,9 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
 
 /// @nodoc
 abstract class _$$AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
-  factory _$$AppState$CopyWith(_$AppState$ value, $Res Function(_$AppState$) then) = __$$AppState$CopyWithImpl<$Res>;
+  factory _$$AppState$CopyWith(
+          _$AppState$ value, $Res Function(_$AppState$) then) =
+      __$$AppState$CopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({AuthState auth, LocationState location});
@@ -96,9 +101,12 @@ abstract class _$$AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _$AppState$>
+class __$$AppState$CopyWithImpl<$Res>
+    extends _$AppStateCopyWithImpl<$Res, _$AppState$>
     implements _$$AppState$CopyWith<$Res> {
-  __$$AppState$CopyWithImpl(_$AppState$ _value, $Res Function(_$AppState$) _then) : super(_value, _then);
+  __$$AppState$CopyWithImpl(
+      _$AppState$ _value, $Res Function(_$AppState$) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -122,9 +130,11 @@ class __$$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _$App
 /// @nodoc
 @JsonSerializable()
 class _$AppState$ implements AppState$ {
-  const _$AppState$({this.auth = const AuthState(), this.location = const LocationState()});
+  const _$AppState$(
+      {this.auth = const AuthState(), this.location = const LocationState()});
 
-  factory _$AppState$.fromJson(Map<String, dynamic> json) => _$$AppState$FromJson(json);
+  factory _$AppState$.fromJson(Map<String, dynamic> json) =>
+      _$$AppState$FromJson(json);
 
   @override
   @JsonKey()
@@ -144,7 +154,8 @@ class _$AppState$ implements AppState$ {
         (other.runtimeType == runtimeType &&
             other is _$AppState$ &&
             (identical(other.auth, auth) || other.auth == auth) &&
-            (identical(other.location, location) || other.location == location));
+            (identical(other.location, location) ||
+                other.location == location));
   }
 
   @JsonKey(ignore: true)
@@ -154,7 +165,8 @@ class _$AppState$ implements AppState$ {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AppState$CopyWith<_$AppState$> get copyWith => __$$AppState$CopyWithImpl<_$AppState$>(this, _$identity);
+  _$$AppState$CopyWith<_$AppState$> get copyWith =>
+      __$$AppState$CopyWithImpl<_$AppState$>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -165,7 +177,8 @@ class _$AppState$ implements AppState$ {
 }
 
 abstract class AppState$ implements AppState {
-  const factory AppState$({final AuthState auth, final LocationState location}) = _$AppState$;
+  const factory AppState$(
+      {final AuthState auth, final LocationState location}) = _$AppState$;
 
   factory AppState$.fromJson(Map<String, dynamic> json) = _$AppState$.fromJson;
 
@@ -175,147 +188,8 @@ abstract class AppState$ implements AppState {
   LocationState get location;
   @override
   @JsonKey(ignore: true)
-  _$$AppState$CopyWith<_$AppState$> get copyWith => throw _privateConstructorUsedError;
-}
-
-AuthState _$AuthStateFromJson(Map<String, dynamic> json) {
-  return AuthState$.fromJson(json);
-}
-
-/// @nodoc
-mixin _$AuthState {
-  AppUser? get user => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $AuthStateCopyWith<AuthState> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AuthStateCopyWith<$Res> {
-  factory $AuthStateCopyWith(AuthState value, $Res Function(AuthState) then) = _$AuthStateCopyWithImpl<$Res, AuthState>;
-  @useResult
-  $Res call({AppUser? user});
-
-  $AppUserCopyWith<$Res>? get user;
-}
-
-/// @nodoc
-class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState> implements $AuthStateCopyWith<$Res> {
-  _$AuthStateCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? user = freezed,
-  }) {
-    return _then(_value.copyWith(
-      user: freezed == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as AppUser?,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $AppUserCopyWith<$Res>? get user {
-    if (_value.user == null) {
-      return null;
-    }
-
-    return $AppUserCopyWith<$Res>(_value.user!, (value) {
-      return _then(_value.copyWith(user: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$AuthState$CopyWith<$Res> implements $AuthStateCopyWith<$Res> {
-  factory _$$AuthState$CopyWith(_$AuthState$ value, $Res Function(_$AuthState$) then) =
-      __$$AuthState$CopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({AppUser? user});
-
-  @override
-  $AppUserCopyWith<$Res>? get user;
-}
-
-/// @nodoc
-class __$$AuthState$CopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res, _$AuthState$>
-    implements _$$AuthState$CopyWith<$Res> {
-  __$$AuthState$CopyWithImpl(_$AuthState$ _value, $Res Function(_$AuthState$) _then) : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? user = freezed,
-  }) {
-    return _then(_$AuthState$(
-      user: freezed == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as AppUser?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$AuthState$ implements AuthState$ {
-  const _$AuthState$({this.user});
-
-  factory _$AuthState$.fromJson(Map<String, dynamic> json) => _$$AuthState$FromJson(json);
-
-  @override
-  final AppUser? user;
-
-  @override
-  String toString() {
-    return 'AuthState(user: $user)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AuthState$ &&
-            (identical(other.user, user) || other.user == user));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, user);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AuthState$CopyWith<_$AuthState$> get copyWith => __$$AuthState$CopyWithImpl<_$AuthState$>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AuthState$ToJson(
-      this,
-    );
-  }
-}
-
-abstract class AuthState$ implements AuthState {
-  const factory AuthState$({final AppUser? user}) = _$AuthState$;
-
-  factory AuthState$.fromJson(Map<String, dynamic> json) = _$AuthState$.fromJson;
-
-  @override
-  AppUser? get user;
-  @override
-  @JsonKey(ignore: true)
-  _$$AuthState$CopyWith<_$AuthState$> get copyWith => throw _privateConstructorUsedError;
+  _$$AppState$CopyWith<_$AppState$> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 AppUser _$AppUserFromJson(Map<String, dynamic> json) {
@@ -336,13 +210,15 @@ mixin _$AppUser {
 
 /// @nodoc
 abstract class $AppUserCopyWith<$Res> {
-  factory $AppUserCopyWith(AppUser value, $Res Function(AppUser) then) = _$AppUserCopyWithImpl<$Res, AppUser>;
+  factory $AppUserCopyWith(AppUser value, $Res Function(AppUser) then) =
+      _$AppUserCopyWithImpl<$Res, AppUser>;
   @useResult
   $Res call({String uid, String email, String displayName, String? imageUrl});
 }
 
 /// @nodoc
-class _$AppUserCopyWithImpl<$Res, $Val extends AppUser> implements $AppUserCopyWith<$Res> {
+class _$AppUserCopyWithImpl<$Res, $Val extends AppUser>
+    implements $AppUserCopyWith<$Res> {
   _$AppUserCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -381,16 +257,20 @@ class _$AppUserCopyWithImpl<$Res, $Val extends AppUser> implements $AppUserCopyW
 
 /// @nodoc
 abstract class _$$AppUser$CopyWith<$Res> implements $AppUserCopyWith<$Res> {
-  factory _$$AppUser$CopyWith(_$AppUser$ value, $Res Function(_$AppUser$) then) = __$$AppUser$CopyWithImpl<$Res>;
+  factory _$$AppUser$CopyWith(
+          _$AppUser$ value, $Res Function(_$AppUser$) then) =
+      __$$AppUser$CopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String uid, String email, String displayName, String? imageUrl});
 }
 
 /// @nodoc
-class __$$AppUser$CopyWithImpl<$Res> extends _$AppUserCopyWithImpl<$Res, _$AppUser$>
+class __$$AppUser$CopyWithImpl<$Res>
+    extends _$AppUserCopyWithImpl<$Res, _$AppUser$>
     implements _$$AppUser$CopyWith<$Res> {
-  __$$AppUser$CopyWithImpl(_$AppUser$ _value, $Res Function(_$AppUser$) _then) : super(_value, _then);
+  __$$AppUser$CopyWithImpl(_$AppUser$ _value, $Res Function(_$AppUser$) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -424,9 +304,14 @@ class __$$AppUser$CopyWithImpl<$Res> extends _$AppUserCopyWithImpl<$Res, _$AppUs
 /// @nodoc
 @JsonSerializable()
 class _$AppUser$ implements AppUser$ {
-  const _$AppUser$({required this.uid, required this.email, required this.displayName, this.imageUrl});
+  const _$AppUser$(
+      {required this.uid,
+      required this.email,
+      required this.displayName,
+      this.imageUrl});
 
-  factory _$AppUser$.fromJson(Map<String, dynamic> json) => _$$AppUser$FromJson(json);
+  factory _$AppUser$.fromJson(Map<String, dynamic> json) =>
+      _$$AppUser$FromJson(json);
 
   @override
   final String uid;
@@ -449,18 +334,22 @@ class _$AppUser$ implements AppUser$ {
             other is _$AppUser$ &&
             (identical(other.uid, uid) || other.uid == uid) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.displayName, displayName) || other.displayName == displayName) &&
-            (identical(other.imageUrl, imageUrl) || other.imageUrl == imageUrl));
+            (identical(other.displayName, displayName) ||
+                other.displayName == displayName) &&
+            (identical(other.imageUrl, imageUrl) ||
+                other.imageUrl == imageUrl));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, uid, email, displayName, imageUrl);
+  int get hashCode =>
+      Object.hash(runtimeType, uid, email, displayName, imageUrl);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AppUser$CopyWith<_$AppUser$> get copyWith => __$$AppUser$CopyWithImpl<_$AppUser$>(this, _$identity);
+  _$$AppUser$CopyWith<_$AppUser$> get copyWith =>
+      __$$AppUser$CopyWithImpl<_$AppUser$>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -489,7 +378,367 @@ abstract class AppUser$ implements AppUser {
   String? get imageUrl;
   @override
   @JsonKey(ignore: true)
-  _$$AppUser$CopyWith<_$AppUser$> get copyWith => throw _privateConstructorUsedError;
+  _$$AppUser$CopyWith<_$AppUser$> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+AuthState _$AuthStateFromJson(Map<String, dynamic> json) {
+  return AuthState$.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AuthState {
+  AppUser? get user => throw _privateConstructorUsedError;
+  List<AppUser> get users => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AuthStateCopyWith<AuthState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AuthStateCopyWith<$Res> {
+  factory $AuthStateCopyWith(AuthState value, $Res Function(AuthState) then) =
+      _$AuthStateCopyWithImpl<$Res, AuthState>;
+  @useResult
+  $Res call({AppUser? user, List<AppUser> users});
+
+  $AppUserCopyWith<$Res>? get user;
+}
+
+/// @nodoc
+class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
+    implements $AuthStateCopyWith<$Res> {
+  _$AuthStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = freezed,
+    Object? users = null,
+  }) {
+    return _then(_value.copyWith(
+      user: freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as AppUser?,
+      users: null == users
+          ? _value.users
+          : users // ignore: cast_nullable_to_non_nullable
+              as List<AppUser>,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AppUserCopyWith<$Res>? get user {
+    if (_value.user == null) {
+      return null;
+    }
+
+    return $AppUserCopyWith<$Res>(_value.user!, (value) {
+      return _then(_value.copyWith(user: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$AuthState$CopyWith<$Res> implements $AuthStateCopyWith<$Res> {
+  factory _$$AuthState$CopyWith(
+          _$AuthState$ value, $Res Function(_$AuthState$) then) =
+      __$$AuthState$CopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({AppUser? user, List<AppUser> users});
+
+  @override
+  $AppUserCopyWith<$Res>? get user;
+}
+
+/// @nodoc
+class __$$AuthState$CopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$AuthState$>
+    implements _$$AuthState$CopyWith<$Res> {
+  __$$AuthState$CopyWithImpl(
+      _$AuthState$ _value, $Res Function(_$AuthState$) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = freezed,
+    Object? users = null,
+  }) {
+    return _then(_$AuthState$(
+      user: freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as AppUser?,
+      users: null == users
+          ? _value._users
+          : users // ignore: cast_nullable_to_non_nullable
+              as List<AppUser>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$AuthState$ implements AuthState$ {
+  const _$AuthState$({this.user, final List<AppUser> users = const <AppUser>[]})
+      : _users = users;
+
+  factory _$AuthState$.fromJson(Map<String, dynamic> json) =>
+      _$$AuthState$FromJson(json);
+
+  @override
+  final AppUser? user;
+  final List<AppUser> _users;
+  @override
+  @JsonKey()
+  List<AppUser> get users {
+    if (_users is EqualUnmodifiableListView) return _users;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_users);
+  }
+
+  @override
+  String toString() {
+    return 'AuthState(user: $user, users: $users)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AuthState$ &&
+            (identical(other.user, user) || other.user == user) &&
+            const DeepCollectionEquality().equals(other._users, _users));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, user, const DeepCollectionEquality().hash(_users));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AuthState$CopyWith<_$AuthState$> get copyWith =>
+      __$$AuthState$CopyWithImpl<_$AuthState$>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AuthState$ToJson(
+      this,
+    );
+  }
+}
+
+abstract class AuthState$ implements AuthState {
+  const factory AuthState$({final AppUser? user, final List<AppUser> users}) =
+      _$AuthState$;
+
+  factory AuthState$.fromJson(Map<String, dynamic> json) =
+      _$AuthState$.fromJson;
+
+  @override
+  AppUser? get user;
+  @override
+  List<AppUser> get users;
+  @override
+  @JsonKey(ignore: true)
+  _$$AuthState$CopyWith<_$AuthState$> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+LocationState _$LocationStateFromJson(Map<String, dynamic> json) {
+  return LocationState$.fromJson(json);
+}
+
+/// @nodoc
+mixin _$LocationState {
+  UserLocation? get location => throw _privateConstructorUsedError;
+  List<UserLocation> get locations => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LocationStateCopyWith<LocationState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LocationStateCopyWith<$Res> {
+  factory $LocationStateCopyWith(
+          LocationState value, $Res Function(LocationState) then) =
+      _$LocationStateCopyWithImpl<$Res, LocationState>;
+  @useResult
+  $Res call({UserLocation? location, List<UserLocation> locations});
+
+  $UserLocationCopyWith<$Res>? get location;
+}
+
+/// @nodoc
+class _$LocationStateCopyWithImpl<$Res, $Val extends LocationState>
+    implements $LocationStateCopyWith<$Res> {
+  _$LocationStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? location = freezed,
+    Object? locations = null,
+  }) {
+    return _then(_value.copyWith(
+      location: freezed == location
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as UserLocation?,
+      locations: null == locations
+          ? _value.locations
+          : locations // ignore: cast_nullable_to_non_nullable
+              as List<UserLocation>,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserLocationCopyWith<$Res>? get location {
+    if (_value.location == null) {
+      return null;
+    }
+
+    return $UserLocationCopyWith<$Res>(_value.location!, (value) {
+      return _then(_value.copyWith(location: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$LocationState$CopyWith<$Res>
+    implements $LocationStateCopyWith<$Res> {
+  factory _$$LocationState$CopyWith(
+          _$LocationState$ value, $Res Function(_$LocationState$) then) =
+      __$$LocationState$CopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({UserLocation? location, List<UserLocation> locations});
+
+  @override
+  $UserLocationCopyWith<$Res>? get location;
+}
+
+/// @nodoc
+class __$$LocationState$CopyWithImpl<$Res>
+    extends _$LocationStateCopyWithImpl<$Res, _$LocationState$>
+    implements _$$LocationState$CopyWith<$Res> {
+  __$$LocationState$CopyWithImpl(
+      _$LocationState$ _value, $Res Function(_$LocationState$) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? location = freezed,
+    Object? locations = null,
+  }) {
+    return _then(_$LocationState$(
+      location: freezed == location
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as UserLocation?,
+      locations: null == locations
+          ? _value._locations
+          : locations // ignore: cast_nullable_to_non_nullable
+              as List<UserLocation>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$LocationState$ implements LocationState$ {
+  const _$LocationState$(
+      {this.location,
+      final List<UserLocation> locations = const <UserLocation>[]})
+      : _locations = locations;
+
+  factory _$LocationState$.fromJson(Map<String, dynamic> json) =>
+      _$$LocationState$FromJson(json);
+
+  @override
+  final UserLocation? location;
+  final List<UserLocation> _locations;
+  @override
+  @JsonKey()
+  List<UserLocation> get locations {
+    if (_locations is EqualUnmodifiableListView) return _locations;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_locations);
+  }
+
+  @override
+  String toString() {
+    return 'LocationState(location: $location, locations: $locations)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LocationState$ &&
+            (identical(other.location, location) ||
+                other.location == location) &&
+            const DeepCollectionEquality()
+                .equals(other._locations, _locations));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, location, const DeepCollectionEquality().hash(_locations));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LocationState$CopyWith<_$LocationState$> get copyWith =>
+      __$$LocationState$CopyWithImpl<_$LocationState$>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LocationState$ToJson(
+      this,
+    );
+  }
+}
+
+abstract class LocationState$ implements LocationState {
+  const factory LocationState$(
+      {final UserLocation? location,
+      final List<UserLocation> locations}) = _$LocationState$;
+
+  factory LocationState$.fromJson(Map<String, dynamic> json) =
+      _$LocationState$.fromJson;
+
+  @override
+  UserLocation? get location;
+  @override
+  List<UserLocation> get locations;
+  @override
+  @JsonKey(ignore: true)
+  _$$LocationState$CopyWith<_$LocationState$> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 UserLocation _$UserLocationFromJson(Map<String, dynamic> json) {
@@ -504,19 +753,22 @@ mixin _$UserLocation {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UserLocationCopyWith<UserLocation> get copyWith => throw _privateConstructorUsedError;
+  $UserLocationCopyWith<UserLocation> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $UserLocationCopyWith<$Res> {
-  factory $UserLocationCopyWith(UserLocation value, $Res Function(UserLocation) then) =
+  factory $UserLocationCopyWith(
+          UserLocation value, $Res Function(UserLocation) then) =
       _$UserLocationCopyWithImpl<$Res, UserLocation>;
   @useResult
   $Res call({String uid, double lat, double lng});
 }
 
 /// @nodoc
-class _$UserLocationCopyWithImpl<$Res, $Val extends UserLocation> implements $UserLocationCopyWith<$Res> {
+class _$UserLocationCopyWithImpl<$Res, $Val extends UserLocation>
+    implements $UserLocationCopyWith<$Res> {
   _$UserLocationCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -549,8 +801,10 @@ class _$UserLocationCopyWithImpl<$Res, $Val extends UserLocation> implements $Us
 }
 
 /// @nodoc
-abstract class _$$UserLocation$CopyWith<$Res> implements $UserLocationCopyWith<$Res> {
-  factory _$$UserLocation$CopyWith(_$UserLocation$ value, $Res Function(_$UserLocation$) then) =
+abstract class _$$UserLocation$CopyWith<$Res>
+    implements $UserLocationCopyWith<$Res> {
+  factory _$$UserLocation$CopyWith(
+          _$UserLocation$ value, $Res Function(_$UserLocation$) then) =
       __$$UserLocation$CopyWithImpl<$Res>;
   @override
   @useResult
@@ -558,9 +812,12 @@ abstract class _$$UserLocation$CopyWith<$Res> implements $UserLocationCopyWith<$
 }
 
 /// @nodoc
-class __$$UserLocation$CopyWithImpl<$Res> extends _$UserLocationCopyWithImpl<$Res, _$UserLocation$>
+class __$$UserLocation$CopyWithImpl<$Res>
+    extends _$UserLocationCopyWithImpl<$Res, _$UserLocation$>
     implements _$$UserLocation$CopyWith<$Res> {
-  __$$UserLocation$CopyWithImpl(_$UserLocation$ _value, $Res Function(_$UserLocation$) _then) : super(_value, _then);
+  __$$UserLocation$CopyWithImpl(
+      _$UserLocation$ _value, $Res Function(_$UserLocation$) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -589,9 +846,11 @@ class __$$UserLocation$CopyWithImpl<$Res> extends _$UserLocationCopyWithImpl<$Re
 /// @nodoc
 @JsonSerializable()
 class _$UserLocation$ implements UserLocation$ {
-  const _$UserLocation$({required this.uid, required this.lat, required this.lng});
+  const _$UserLocation$(
+      {required this.uid, required this.lat, required this.lng});
 
-  factory _$UserLocation$.fromJson(Map<String, dynamic> json) => _$$UserLocation$FromJson(json);
+  factory _$UserLocation$.fromJson(Map<String, dynamic> json) =>
+      _$$UserLocation$FromJson(json);
 
   @override
   final String uid;
@@ -634,10 +893,13 @@ class _$UserLocation$ implements UserLocation$ {
 }
 
 abstract class UserLocation$ implements UserLocation {
-  const factory UserLocation$({required final String uid, required final double lat, required final double lng}) =
-      _$UserLocation$;
+  const factory UserLocation$(
+      {required final String uid,
+      required final double lat,
+      required final double lng}) = _$UserLocation$;
 
-  factory UserLocation$.fromJson(Map<String, dynamic> json) = _$UserLocation$.fromJson;
+  factory UserLocation$.fromJson(Map<String, dynamic> json) =
+      _$UserLocation$.fromJson;
 
   @override
   String get uid;
@@ -647,170 +909,6 @@ abstract class UserLocation$ implements UserLocation {
   double get lng;
   @override
   @JsonKey(ignore: true)
-  _$$UserLocation$CopyWith<_$UserLocation$> get copyWith => throw _privateConstructorUsedError;
-}
-
-LocationState _$LocationStateFromJson(Map<String, dynamic> json) {
-  return LocationState$.fromJson(json);
-}
-
-/// @nodoc
-mixin _$LocationState {
-  UserLocation? get location => throw _privateConstructorUsedError;
-  List<UserLocation> get locations => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $LocationStateCopyWith<LocationState> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $LocationStateCopyWith<$Res> {
-  factory $LocationStateCopyWith(LocationState value, $Res Function(LocationState) then) =
-      _$LocationStateCopyWithImpl<$Res, LocationState>;
-  @useResult
-  $Res call({UserLocation? location, List<UserLocation> locations});
-
-  $UserLocationCopyWith<$Res>? get location;
-}
-
-/// @nodoc
-class _$LocationStateCopyWithImpl<$Res, $Val extends LocationState> implements $LocationStateCopyWith<$Res> {
-  _$LocationStateCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? location = freezed,
-    Object? locations = null,
-  }) {
-    return _then(_value.copyWith(
-      location: freezed == location
-          ? _value.location
-          : location // ignore: cast_nullable_to_non_nullable
-              as UserLocation?,
-      locations: null == locations
-          ? _value.locations
-          : locations // ignore: cast_nullable_to_non_nullable
-              as List<UserLocation>,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $UserLocationCopyWith<$Res>? get location {
-    if (_value.location == null) {
-      return null;
-    }
-
-    return $UserLocationCopyWith<$Res>(_value.location!, (value) {
-      return _then(_value.copyWith(location: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$LocationState$CopyWith<$Res> implements $LocationStateCopyWith<$Res> {
-  factory _$$LocationState$CopyWith(_$LocationState$ value, $Res Function(_$LocationState$) then) =
-      __$$LocationState$CopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({UserLocation? location, List<UserLocation> locations});
-
-  @override
-  $UserLocationCopyWith<$Res>? get location;
-}
-
-/// @nodoc
-class __$$LocationState$CopyWithImpl<$Res> extends _$LocationStateCopyWithImpl<$Res, _$LocationState$>
-    implements _$$LocationState$CopyWith<$Res> {
-  __$$LocationState$CopyWithImpl(_$LocationState$ _value, $Res Function(_$LocationState$) _then) : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? location = freezed,
-    Object? locations = null,
-  }) {
-    return _then(_$LocationState$(
-      location: freezed == location
-          ? _value.location
-          : location // ignore: cast_nullable_to_non_nullable
-              as UserLocation?,
-      locations: null == locations
-          ? _value._locations
-          : locations // ignore: cast_nullable_to_non_nullable
-              as List<UserLocation>,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$LocationState$ implements LocationState$ {
-  const _$LocationState$({this.location, final List<UserLocation> locations = const <UserLocation>[]})
-      : _locations = locations;
-
-  factory _$LocationState$.fromJson(Map<String, dynamic> json) => _$$LocationState$FromJson(json);
-
-  @override
-  final UserLocation? location;
-  final List<UserLocation> _locations;
-  @override
-  @JsonKey()
-  List<UserLocation> get locations {
-    if (_locations is EqualUnmodifiableListView) return _locations;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_locations);
-  }
-
-  @override
-  String toString() {
-    return 'LocationState(location: $location, locations: $locations)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LocationState$ &&
-            (identical(other.location, location) || other.location == location) &&
-            const DeepCollectionEquality().equals(other._locations, _locations));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, location, const DeepCollectionEquality().hash(_locations));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$LocationState$CopyWith<_$LocationState$> get copyWith =>
-      __$$LocationState$CopyWithImpl<_$LocationState$>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$LocationState$ToJson(
-      this,
-    );
-  }
-}
-
-abstract class LocationState$ implements LocationState {
-  const factory LocationState$({final UserLocation? location, final List<UserLocation> locations}) = _$LocationState$;
-
-  factory LocationState$.fromJson(Map<String, dynamic> json) = _$LocationState$.fromJson;
-
-  @override
-  UserLocation? get location;
-  @override
-  List<UserLocation> get locations;
-  @override
-  @JsonKey(ignore: true)
-  _$$LocationState$CopyWith<_$LocationState$> get copyWith => throw _privateConstructorUsedError;
+  _$$UserLocation$CopyWith<_$UserLocation$> get copyWith =>
+      throw _privateConstructorUsedError;
 }

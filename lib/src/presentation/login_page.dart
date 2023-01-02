@@ -44,6 +44,11 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
+                Image.network(
+                  'https://i.imgur.com/hrHP61V.png',
+                  width: 150,
+                  height: 150,
+                ),
                 TextFormField(
                   controller: _emailController,
                   decoration: const InputDecoration(

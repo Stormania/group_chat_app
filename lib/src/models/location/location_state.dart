@@ -7,5 +7,6 @@ class LocationState with _$LocationState {
     @Default(<UserLocation>[]) List<UserLocation> locations,
   }) = LocationState$;
 
-  factory LocationState.fromJson(Map<String, dynamic> json) => _$LocationStateFromJson(Map<String, dynamic>.from(json));
+  factory LocationState.fromJson(Map<dynamic, dynamic> json) =>
+      _$LocationStateFromJson(Map<String, dynamic>.from(json));
 }

@@ -6,8 +6,6 @@ analyzer:
   exclude:
     - "lib/**/*.g.dart"
     - "lib/**/*.freezed.dart"
-    - "lib/**/**/*.g.dart"
-    - "lib/**/**/*.freezed.dart"
 
 linter:
   rules:
